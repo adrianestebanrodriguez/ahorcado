@@ -14,6 +14,29 @@ document.addEventListener('DOMContentLoaded', function () {
         updateDisplay();
     }
 
+    // Manejar la entrada de letras (actualizado para admitir toques en letras)
+    document.getElementById('hangman-container').addEventListener('click', function (event) {
+        const target = event.target;
+        if (target.classList.contains('letter')) {
+            const letter = target.textContent.toLowerCase();
+
+            if (guessedLetters.indexOf(letter) === -1 && incorrectLetters.indexOf(letter) === -1) {
+                if (selectedWord.includes(letter)) {
+                    for (let i = 0; i < selectedWord.length; i++) {
+                        if (selectedWord[i] === letter) {
+                            guessedLetters[i] = letter;
+                        }
+                    }
+                } else {
+                    incorrectLetters.push(letter);
+                    hangmanImageIndex++;
+                }
+
+                updateDisplay();
+            }
+        }
+    });
+    
     // Actualizar la pantalla del juego
     function updateDisplay() {
         document.getElementById('word-display').textContent = guessedLetters.join(' ');
