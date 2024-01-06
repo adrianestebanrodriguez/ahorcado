@@ -1,7 +1,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f0f0; /* Color de fondo suave */
-    background-image: url(texture.jpg); /* Ruta de la textura */
+    background-color: #f0f0f0;
+    background-image: url(texture.jpg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,10 +11,12 @@ body {
 
 #hangman-container {
     text-align: center;
-    background-color: #fff; /* Fondo blanco para resaltar el contenido */
+    background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Ancho máximo para una mejor legibilidad en dispositivos móviles */
+    width: 90%; /* Asegura que el contenedor no sea demasiado ancho en escritorio */
 }
 
 #word-display {
@@ -25,41 +27,39 @@ body {
 #incorrect-letters {
     font-size: 1.2em;
     margin-bottom: 20px;
-    color: #ff4500; /* Color naranja para letras incorrectas */
+    color: #ff4500;
 }
 
 #hangman-image {
-    width: 300px;
-    height: 300px;
-    margin: 20px auto;
-    background-color: #f0f0f0; /* Fondo gris claro para el área del ahorcado */
+    width: 100%; /* Ajusta al 100% del ancho del contenedor para dispositivos móviles */
+    height: 200px; /* Altura fija para evitar que sea demasiado alto */
+    margin: 20px 0;
+    background-color: #f0f0f0;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2em;
-    border: 2px solid #555; /* Borde gris para resaltar la imagen del ahorcado */
+    border: 2px solid #555;
     border-radius: 10px;
 }
 
 #message {
     font-size: 1.5em;
     margin: 20px 0;
-    color: rgb(9, 136, 37); /* Color verde para mensajes positivos */
+    color: #008000;
 }
 
 #reset-button {
     padding: 15px 20px;
-    background-color: #242c25;
+    background-color: #4caf50;
     color: #fff;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     font-size: 1.2em;
-    transition: background-color 0.3s ease; /* Efecto de transición suave */
+    transition: background-color 0.3s ease;
 }
 
 #reset-button:hover {
-    background-color: #526653; /* Color ligeramente más oscuro al pasar el ratón */
+    background-color: #45a049;
 }
-
-
