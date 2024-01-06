@@ -14,6 +14,18 @@ document.addEventListener('DOMContentLoaded', function () {
         updateDisplay();
     }
 
+    // Crear el teclado virtual
+    const keyboardContainer = document.getElementById('keyboard-container');
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+    for (let letter of alphabet) {
+        const letterButton = document.createElement('div');
+        letterButton.classList.add('letter');
+        letterButton.textContent = letter.toUpperCase(); // Mostrar letras en mayúsculas
+        keyboardContainer.appendChild(letterButton);
+    }
+
+
     // Manejar la entrada de letras (actualizado para admitir toques en letras)
     document.getElementById('hangman-container').addEventListener('click', function (event) {
         const target = event.target;
@@ -105,3 +117,4 @@ document.addEventListener('DOMContentLoaded', function () {
     // Iniciar el juego
     resetGame();
 });
+
